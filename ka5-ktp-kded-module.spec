@@ -1,15 +1,15 @@
-%define		kdeappsver	19.04.1
+%define		kdeappsver	20.12.3
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		ktp-kded-module
 Summary:	ktp-kded-module
 Name:		ka5-%{kaname}
-Version:	19.04.1
+Version:	20.12.3
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
-Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	f527b08262c9f10aeb9d11bb7b0433a6
+Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
+# Source0-md5:	25b536cab5ad79e3c5d02ae8b388c2f8
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
@@ -31,7 +31,7 @@ BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	shared-mime-info
 BuildRequires:	tar >= 1:1.22
-BuildRequires:	telepathy-qt5-devel
+BuildRequires:	telepathy-qt5-devel >= 0.9.8
 BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -63,7 +63,6 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_ktp_integration_module.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/kded_ktp_integration_module.so
 %{_datadir}/dbus-1/services/org.freedesktop.Telepathy.Client.KTp.KdedIntegrationModule.service
 %{_datadir}/kservices5/kcm_ktp_integration_module.desktop
-%{_datadir}/kservices5/kded/ktp_integration_module.desktop
+%attr(755,root,root) %{_libdir}/qt5/plugins/kf5/kded/ktp_integration_module.so
