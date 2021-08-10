@@ -38,6 +38,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 KDE Telepathy workspace integration.
 
+%description -l pl.UTF-8
+Integracja KDE Telepathy z pulpitem.
+
 %prep
 %setup -q -n %{kaname}-%{version}
 
