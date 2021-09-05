@@ -1,15 +1,15 @@
-%define		kdeappsver	21.08.0
+%define		kdeappsver	21.08.1
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		ktp-kded-module
 Summary:	ktp-kded-module
 Name:		ka5-%{kaname}
-Version:	21.08.0
+Version:	21.08.1
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	b635366e73dcf1fa51119d479cf50268
+# Source0-md5:	bf2b90b37911c79175bc61417fe8eb35
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
